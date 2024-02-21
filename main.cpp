@@ -9,9 +9,11 @@
 
 #include <glad/glad.h>
 #include <iostream>
-// #include "headers/test.hpp"
+#include "headers/adding.hpp"
 
 int main() {
-    std::cout << "Hello world" << std::endl;
+    std::cout << "STARTING ADDING PROGRAM" << std::endl;
+    int results = add(1,2);
+    std::cout << "Results of 1 + 2 are: " << results << std::endl;
     return 0;
 }

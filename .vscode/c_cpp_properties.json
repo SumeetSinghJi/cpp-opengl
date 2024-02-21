@@ -4,7 +4,7 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/src/GLFW/include",
+                "${workspaceFolder}/src/glfw/include",
                 "${workspaceFolder}/src/googletest/googletest/include"
             ],
             "defines": [

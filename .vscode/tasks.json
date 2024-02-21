@@ -14,26 +14,15 @@
                 // "-fansi-escape-codes", // Clang
                 "-fdiagnostics-color=always", // MingW
                 "-I${workspaceFolder}",
-                "-I${workspaceFolder}/src/GLFW/include", // GLFW - https://github.com/glfw/glfw
-                "-I${workspaceFolder}/src/glad/include", // GLAD - https://glad.dav1d.de/
+                "-I${workspaceFolder}/src/glfw/include", // GLFW - https://github.com/glfw/glfw/releases/download/3.3.9/glfw-3.3.9.bin.WIN64.zip
+                "-I${workspaceFolder}/src/glad/include", // GLAD - https://glad.dav1d.de/ (flags Profile = Core, gl = Version 3.0)
                 "-I${workspaceFolder}/src/googletest/googletest/include", // Googletest - https://github.com/google/googletest.git
                 "-g",
                 "${fileDirname}/*.cpp",
                 "-o",
                 "${workspaceFolder}/${fileBasenameNoExtension}.exe",
-                "-L${workspaceFolder}/src/glfw/build/src", // GLFW: points to static lib: libglfw3.a
-                /* GLFW STATIC LIBS
-                cmake find_package() requires bool  on; -DGLFW_INSTALL=ON - read more here: https://www.glfw.org/docs/3.3/build_guide.html#build_link_win32
-                MingW (requires install parameter value): 
-                cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=C:/Users/Sumeet/Documents/cpp-opengl/src/glfw/build -DGLFW_LIBRARY_TYPE=STATIC -DGLFW_BUILD_DOCS=OFF -DGLFW_BUILD_EXAMPLES=OFF -DGLFW_BUILD_TESTS=OFF -DGLFW_INSTALL=ON ..
-                mingw32-make install
-                Windows Clang: untested read here: https://www.glfw.org/release-2.7.8
-                 MacOS Clang: untested read here: https://www.glfw.org/release-2.7.8
-                */
-                "-L${workspaceFolder}/src/googletest/build/lib",
-                /* GOOGLE TEST STATIC LIBS
-                cmake -G "MinGW Makefiles" -Dgtest_build_tests=OFF -DBUILD_SHARED_LIBS=OFF ..
-                */
+                "-L${workspaceFolder}/src/glfw/lib-mingw-w64",
+                "-L${workspaceFolder}/src/googletest/build/lib", // GOOGLE TEST Generating STATIC LIB: cmake -G "MinGW Makefiles" -Dgtest_build_tests=OFF -DBUILD_SHARED_LIBS=OFF ..
                 "-lglfw3",
                 "-lgtest",
                 "-lgtest_main",
