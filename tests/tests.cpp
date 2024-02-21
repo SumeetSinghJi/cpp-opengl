@@ -2,7 +2,7 @@
     Author: Sumeet Singh
     Dated: 22/02/2024
     Minimum C++ Standard: C++11
-    Purpose: Test main.cpp file
+    Purpose: Test adding.cpp file
     License: MIT License
     Description: Read README.md for more details
 */
