@@ -18,9 +18,13 @@ target_include_directories(tests PRIVATE
 
 target_link_libraries(tests PRIVATE 
     "${CMAKE_CURRENT_SOURCE_DIR}/../src/glfw/lib-mingw-w64/libglfw3.a"
-    "${CMAKE_CURRENT_SOURCE_DIR}/../src/googletest/build/lib/gtest_main.lib"
-    "${CMAKE_CURRENT_SOURCE_DIR}/../src/googletest/build/lib/gtest.lib"
-    "${CMAKE_CURRENT_SOURCE_DIR}/../src/googletest/build/lib/gmock_main.lib"
-    "${CMAKE_CURRENT_SOURCE_DIR}/../src/googletest/build/lib/gmock.lib"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../src/googletest/build/lib/libgtest_main.a"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../src/googletest/build/lib/libgtest.a"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../src/googletest/build/lib/libgmock_main.a"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../src/googletest/build/lib/libgmock.a"
     "stdc++"
+)
+
+set_target_properties(tests PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY "../" # output .exe to "./"
 )

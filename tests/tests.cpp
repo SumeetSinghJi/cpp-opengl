@@ -8,7 +8,7 @@
 */
 
 #include <gtest/gtest.h>
-// #include <../headers/adding.hpp>
+#include "../headers/adding.hpp"
 
 class mainTest : public ::testing::Test { 
     protected:
@@ -23,8 +23,8 @@ class mainTest : public ::testing::Test {
 TEST_F(mainTest, adds_two_numbers_correctly) {
     int a = 1;
     int b = 2;
-    // int results = add(a, b);
-    EXPECT_EQ(a + b, 3);
+    int results = add(a, b);
+    EXPECT_EQ(results, 3);
 }
 
 int main(int argc, char* argv[]) {

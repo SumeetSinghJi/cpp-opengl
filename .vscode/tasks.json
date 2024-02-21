@@ -18,7 +18,10 @@
                 "-I${workspaceFolder}/src/glad/include", // GLAD - https://glad.dav1d.de/ (flags Profile = Core, gl = Version 3.0)
                 "-I${workspaceFolder}/src/googletest/googletest/include", // Googletest - https://github.com/google/googletest.git
                 "-g",
-                "${fileDirname}/*.cpp",
+                // "${fileDirname}/*.cpp",
+                "${workspaceFolder}/adding.cpp",
+                // "${workspaceFolder}/main.cpp",
+                "${workspaceFolder}/tests/tests.cpp", // when building tests/tests.cpp you need manually add lines above
                 "-o",
                 "${workspaceFolder}/${fileBasenameNoExtension}.exe",
                 "-L${workspaceFolder}/src/glfw/lib-mingw-w64",
