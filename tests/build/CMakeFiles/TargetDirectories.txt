@@ -1,3 +1,0 @@
-C:/Users/Sumeet/Documents/cpp-opengl/tests/build/CMakeFiles/tests.dir
-C:/Users/Sumeet/Documents/cpp-opengl/tests/build/CMakeFiles/edit_cache.dir
-C:/Users/Sumeet/Documents/cpp-opengl/tests/build/CMakeFiles/rebuild_cache.dir
