@@ -20,18 +20,15 @@
                 "-g",
                 "${fileDirname}/*.cpp",
                 "${workspaceFolder}/src/adding.cpp",
-                // "${workspaceFolder}/tests/tests.cpp", // For building tests/tests.cpp
                 "-o",
                 "${workspaceFolder}/${fileBasenameNoExtension}.exe",
                 /* STATIC VS DYNAMIC
                 Static libraries (.lib files on Windows, .a files on Unix-like systems)
-                Dynamic/shared libraries (.dll/.dll.a (for linking) files on Windows, .so files on Unix-like systems)
-                to get Static libraries configure library with library specific flag e.g. 
-                Googletest cmake flags: cmake -G "MinGW Makefiles" -Dgtest_build_tests=OFF -DBUILD_SHARED_LIBS=OFF ..
+                Dynamic libraries (.dll/.dll.a (for linking) files on Windows, .so files on Unix-like systems)
                 */
-                "-L${workspaceFolder}/src/glfw/lib-mingw-w64",
+                "-L${workspaceFolder}/src/glfw/lib-mingw-w64", // GLFW
                 "-L${workspaceFolder}/src/googletest/build/lib", // Google test: Generating STATIC LIB: cmake -G "MinGW Makefiles" -Dgtest_build_tests=OFF -DBUILD_SHARED_LIBS=OFF ..
-                "-lglfw3", // Google test
+                "-lglfw3", // GLFW
                 "-lgtest", // Google test
                 "-lgtest_main", // Google test
             ],
