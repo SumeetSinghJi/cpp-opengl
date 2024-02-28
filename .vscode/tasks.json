@@ -20,6 +20,7 @@
                 "-g",
                 "${fileDirname}/*.cpp",
                 "${workspaceFolder}/src/adding.cpp",
+                "${workspaceFolder}/src/glad/src/glad.c", // GLAD include with main.cpp source file
                 "-o",
                 "${workspaceFolder}/${fileBasenameNoExtension}.exe",
                 /* STATIC VS DYNAMIC
@@ -29,6 +30,7 @@
                 "-L${workspaceFolder}/src/glfw/lib-mingw-w64", // GLFW
                 "-L${workspaceFolder}/src/googletest/build/lib", // Google test: Generating STATIC LIB: cmake -G "MinGW Makefiles" -Dgtest_build_tests=OFF -DBUILD_SHARED_LIBS=OFF ..
                 "-lglfw3", // GLFW
+                "-lopengl32",
                 "-lgtest", // Google test
                 "-lgtest_main", // Google test
                 "-lgdi32", // Required for Windows GLFW/GLAD, Windows GDI (Graphics Device Interface) API GDI32 library
