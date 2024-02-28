@@ -8,12 +8,22 @@
 */
 
 #include <glad/glad.h>
+#include <GLFW/glfw3.h>
 #include <iostream>
 #include "headers/adding.hpp"
 
 int main() {
-    std::cout << "STARTING ADDING PROGRAM" << std::endl;
-    int results = add(1,2);
-    std::cout << "Results of 1 + 2 are: " << results << std::endl;
+    std::cout << "STARTING OPENGL PROGRAM" << std::endl;
+
+    glfwInit();
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
+#ifdef __APPLE__
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+#endif
+
     return 0;
 }

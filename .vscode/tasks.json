@@ -31,6 +31,7 @@
                 "-lglfw3", // GLFW
                 "-lgtest", // Google test
                 "-lgtest_main", // Google test
+                "-lgdi32", // Required for Windows GLFW/GLAD, Windows GDI (Graphics Device Interface) API GDI32 library
             ],
             "options": {
                 "cwd": "${fileDirname}"
